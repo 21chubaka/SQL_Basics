@@ -25,3 +25,19 @@ FROM invoices;
 -- Return First Name, Last Name, Email, and Phone Number from the Customer table
 SELECT FirstName, LastName, email, phone
 FROM customer;
+
+-- Limits --
+-- Find all data from the Playlist Track, but only return the first 10 records
+SELECT *
+FROM PlaylistTrack
+LIMIT 10;
+
+-- Find all data from the Media Types table, but only return 25 records
+SELECT *
+FROM MediaType
+LIMIT 25;
+
+-- Find all data from the Albums table, but limit the results to 5 records
+SELECT *
+FROM Albums
+LIMIT 5;
