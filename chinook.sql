@@ -1,5 +1,6 @@
 -- Simple Queries
 
+-- Find Alls --
 -- Find all data from the tracks table
 SELECT *
 FROM tracks;
@@ -12,6 +13,7 @@ FROM artisits;
 SELECT *
 FROM invoices;
 
+-- Column Returns --
 -- Return Playlist ID and Name from the playlist table
 SELECT PlaylistId, Name
 FROM playlist;
