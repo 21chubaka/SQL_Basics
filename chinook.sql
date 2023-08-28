@@ -41,3 +41,19 @@ LIMIT 25;
 SELECT *
 FROM Albums
 LIMIT 5;
+
+-- Simple Where --
+-- Find all the tracks with a length of 5,000,000 milliseconds or more
+SELECT *
+FROM tracks
+WHERE milliseconds >= 5000000;
+
+-- Find all invoices whose Total is between $5 and $15
+SELECT *
+FROM invoices
+WHERE total BETWEEN 5 AND 15;
+
+-- Find all Customers that are located in these States: RJ, DF, AB, BC, CA, WA, NY
+SELECT *
+FROM customers
+WHERE state IN ('RJ', 'DF', 'AB', 'BC', 'CA', 'WA', 'NY');
