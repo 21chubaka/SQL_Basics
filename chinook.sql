@@ -88,3 +88,9 @@ SELECT COUNT(InvoiceId) AS order_cnt, CustomerId
 FROM invoices
 GROUP BY CustomerId
 ORDER BY order_cnt DESC;
+
+-- Find the albums that have at least 12 tracks
+SELECT AlbumId, COUNT(*) AS num_tracks
+FROM tracks
+GROUP BY AlbumId
+Having num_tracks >= 12;
