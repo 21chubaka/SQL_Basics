@@ -73,3 +73,17 @@ WHERE name LIKE 'All%';
 SELECT email
 FROM customer
 WHERE email LIKE 'J%@gmail.com';
+
+-- Find all the invoices with billing city set as Brasilia, Edmonton, and Vancouver and
+-- sort the results in descending order by Invoice ID
+SELECT InvoiceId, BillingCity, total
+FROM invoices
+WHERE BillingCity IN ('Brasilia', 'Edmonton', 'Vancouver')
+ORDER BY InvoiceId DESC;
+
+-- Find all the number of orders placed by each customer and sort the results by the
+-- number of orders in descending order
+SELECT COUNT(InvoiceId) AS order_cnt, CustomerId
+FROM invoices
+GROUP BY CustomerId
+ORDER BY order_cnt DESC;
