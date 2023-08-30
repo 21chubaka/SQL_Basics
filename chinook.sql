@@ -57,3 +57,15 @@ WHERE total BETWEEN 5 AND 15;
 SELECT *
 FROM customers
 WHERE state IN ('RJ', 'DF', 'AB', 'BC', 'CA', 'WA', 'NY');
+
+-- Find all invoices for customers 56 and 58 where the total is between $1 and $5
+SELECT *
+FROM invoices
+WHERE (CustomerId IN ('56', '58'))
+    AND (total BETWEEN 1 AND 5);
+
+-- Find all tracks whose name starts with 'All'
+SELECT *
+FROM tracks
+WHERE name LIKE 'All%';
+
