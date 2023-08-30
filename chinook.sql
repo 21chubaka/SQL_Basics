@@ -74,6 +74,7 @@ SELECT email
 FROM customer
 WHERE email LIKE 'J%@gmail.com';
 
+-- Order By and Group By
 -- Find all the invoices with billing city set as Brasilia, Edmonton, and Vancouver and
 -- sort the results in descending order by Invoice ID
 SELECT InvoiceId, BillingCity, total
