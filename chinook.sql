@@ -55,7 +55,7 @@ WHERE total BETWEEN 5 AND 15;
 
 -- Find all Customers that are located in these States: RJ, DF, AB, BC, CA, WA, NY
 SELECT *
-FROM customers
+FROM customer
 WHERE state IN ('RJ', 'DF', 'AB', 'BC', 'CA', 'WA', 'NY');
 
 -- Find all invoices for customers 56 and 58 where the total is between $1 and $5
@@ -69,3 +69,7 @@ SELECT *
 FROM tracks
 WHERE name LIKE 'All%';
 
+-- Find all customer emails that start with 'J' and use gmail.com
+SELECT email
+FROM customer
+WHERE email LIKE 'J%@gmail.com';
