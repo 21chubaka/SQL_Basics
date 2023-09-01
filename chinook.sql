@@ -99,3 +99,8 @@ Having num_tracks >= 12;
 -- Find all albums from Led Zeppelin
 SELECT *
 FROM albums
+WHERE ArtistId = (
+    SELECT ArtistId
+    FROM artists
+    WHERE name = 'Led Zeppelin'
+);
