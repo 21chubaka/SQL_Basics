@@ -104,3 +104,12 @@ WHERE ArtistId = (
     FROM artists
     WHERE name = 'Led Zeppelin'
 );
+
+-- Find the number of albums Led Zeppelin has
+SELECT COUNT(*)
+FROM albums
+WHERE ArtistId = (
+    SELECT ArtistId
+    FROM artists
+    WHERE name = 'Led Zeppelin'
+);
