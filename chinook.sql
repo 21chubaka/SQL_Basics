@@ -7,7 +7,7 @@ FROM tracks;
 
 -- Find all data from the artists table
 SELECT *
-FROM artisits;
+FROM artists;
 
 -- Find all data from the invoices table
 SELECT *
@@ -113,3 +113,15 @@ WHERE ArtistId = (
     FROM artists
     WHERE name = 'Led Zeppelin'
 );
+
+-- Joins --
+-- Find all the album titles and unit prices for the artist 'Audioslave'
+SELECT artists.Name AS 'Artist Name',
+        albums.Title AS 'Album Title',
+        tracks.UnitPrice AS 'Unit Price'
+FROM artists
+    LEFT JOIN albums ON 
+        artists.ArtistId = albums.ArtistId
+    LEFT JOIN tracks ON
+        albums.AlbumId = tracks.AlbumId
+WHERE artists.Name = 'Audioslave';
