@@ -95,7 +95,7 @@ FROM tracks
 GROUP BY AlbumId
 Having num_tracks >= 12;
 
--- Nested Queries --
+-- Nested Subqueries --
 -- Find all albums from Led Zeppelin
 SELECT *
 FROM albums
