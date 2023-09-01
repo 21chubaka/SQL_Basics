@@ -94,3 +94,8 @@ SELECT AlbumId, COUNT(*) AS num_tracks
 FROM tracks
 GROUP BY AlbumId
 Having num_tracks >= 12;
+
+-- Nested Queries --
+-- Find all albums from Led Zeppelin
+SELECT *
+FROM albums
