@@ -134,3 +134,11 @@ FROM customers c
         c.CustomerId = i.CustomerId
 GROUP BY c.CustomerId
 ORDER BY Num_of_Invoices ASC;
+
+-- Find the total price for the 'Big Ones' album
+SELECT albums.Title AS 'Album Title',
+        SUM(tracks.UnitPrice) AS 'Album Price'
+FROM albums
+    LEFT JOIN tracks ON
+        albums.AlbumId = tracks.AlbumId
+WHERE albums.Title = 'Big Ones';
