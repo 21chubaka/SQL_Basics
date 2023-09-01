@@ -135,7 +135,7 @@ FROM customers c
 GROUP BY c.CustomerId
 ORDER BY Num_of_Invoices ASC;
 
--- Find the total price for the 'Big Ones' album
+-- Find the total album price for the 'Big Ones' album
 SELECT albums.Title AS 'Album Title',
         SUM(tracks.UnitPrice) AS 'Album Price'
 FROM albums
