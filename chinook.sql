@@ -125,3 +125,12 @@ FROM artists
     LEFT JOIN tracks ON
         albums.AlbumId = tracks.AlbumId
 WHERE artists.Name = 'Audioslave';
+
+-- Find all the customers first and last names and give a count of how many invoices each have
+SELECT DISTINCT(c.CustomerId), c.FirstName, c.LastName,
+                COUNT(i.InvoiceId) AS Num_of_Invoices
+FROM customers c
+    LEFT JOIN invoices i ON
+        c.CustomerId = i.CustomerId
+GROUP BY c.CustomerId
+ORDER BY Num_of_Invoices ASC;
