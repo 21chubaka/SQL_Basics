@@ -114,6 +114,15 @@ WHERE ArtistId = (
     WHERE name = 'Led Zeppelin'
 );
 
+-- Find the names and tracks for the album 'Californication'
+SELECT name AS Track_Name
+FROM tracks
+WHERE AlbumId = (
+    SELECT AlbumId
+    FROM albums
+    WHERE title = 'Californication'
+);
+
 -- Joins --
 -- Find all the album titles and unit prices for the artist 'Audioslave'
 SELECT artists.Name AS 'Artist Name',
