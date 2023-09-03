@@ -184,3 +184,10 @@ FROM employees e
         e.ReportsTo = m.EmployeeId;
 
 -- Unions --
+-- Return a list of all employees' and customers' first and last names in descending order by last name
+SELECT e.FirstName, e.LastName
+FROM employees e
+UNION
+SELECT c.FirstName, c.LastName
+FROM customers c
+ORDER BY LastName DESC;
