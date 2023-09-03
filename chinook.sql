@@ -123,6 +123,14 @@ WHERE AlbumId = (
     WHERE title = 'Californication'
 );
 
+-- Return the total number of invoices, first & last name, city, and email for each customer
+SELECT DISTINCT(c.CustomerId), c.FirstName, c.LastName, c.email,
+                COUNT(i.InvoiceId) AS Num_of_Invoices
+FROM customers c
+    LEFT JOIN invoices i ON
+        c.CustomerId = i.CustomerId
+GROUP BY c.CustomerId;
+
 -- Joins --
 -- Find all the album titles and unit prices for the artist 'Audioslave'
 SELECT artists.Name AS 'Artist Name',
