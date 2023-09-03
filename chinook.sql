@@ -182,3 +182,5 @@ SELECT m.LastName AS Manager,
 FROM employees e
     INNER JOIN employees m ON
         e.ReportsTo = m.EmployeeId;
+
+-- Unions --
