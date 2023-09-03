@@ -168,6 +168,14 @@ FROM artists
         artists.ArtistId = albums.ArtistId
 WHERE albums.Title IS NULL;
 
+-- Find if any customers have a different city between their billing city and customer city
+SELECT c.CustomerId, c.City AS 'Cust_City',
+        i.BillingCity
+FROM customers c
+    LEFT JOIN invoices i ON
+        c.CustomerId = i.CustomerId
+WHERE c.City != i.BillingCity;
+
 -- Return the manager's last name and the last name of the employee(s) who report to them
 SELECT m.LastName AS Manager,
         e.LastName AS Reports
