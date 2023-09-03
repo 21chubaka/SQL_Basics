@@ -160,6 +160,14 @@ FROM customers c
         c.CustomerId = i.CustomerId
 GROUP BY c.CustomerId;
 
+-- Find the name and ID of the artists who do not have albums
+SELECT artists.ArtistId, artists.Name AS Artist_Name,
+        albums.Title AS Album_Name
+FROM artists
+    LEFT JOIN albums ON
+        artists.ArtistId = albums.ArtistId
+WHERE albums.Title IS NULL;
+
 -- Return the manager's last name and the last name of the employee(s) who report to them
 SELECT m.LastName AS Manager,
         e.LastName AS Reports
