@@ -159,3 +159,10 @@ FROM customers c
     LEFT JOIN invoices i ON
         c.CustomerId = i.CustomerId
 GROUP BY c.CustomerId;
+
+-- Return the manager's last name and the last name of the employee(s) who report to them
+SELECT m.LastName AS Manager,
+        e.LastName AS Reports
+FROM employees e
+    INNER JOIN employees m ON
+        e.ReportsTo = m.EmployeeId;
