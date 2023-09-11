@@ -193,3 +193,5 @@ FROM customers c
 ORDER BY LastName DESC;
 
 -- String Manipulation --
+-- Return a list of all customer Ids, full name, address, and a field that combines city and country separated
+-- by a space and all uppercase
