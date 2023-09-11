@@ -201,3 +201,6 @@ FROM customers;
 
 -- Create a User Id for employees that are made from the first 4 letters of the employee's first name and the
 -- first 2 letters of their last name.  Make the Id lowercase.
+SELECT EmployeeId, FirstName, LastName,
+        LOWER(SUBSTR(FirstName, 1, 4) || SUBSTR(LastName, 1, 2)) AS UserId
+FROM employees;
