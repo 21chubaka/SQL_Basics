@@ -191,3 +191,5 @@ UNION
 SELECT c.FirstName, c.LastName
 FROM customers c
 ORDER BY LastName DESC;
+
+-- String Manipulation --
