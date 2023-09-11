@@ -198,3 +198,6 @@ ORDER BY LastName DESC;
 SELECT CustomerId, FirstName || ' ' || LastName AS FullName, address,
         UPPER(city || ' ' || country) AS CityCountry
 FROM customers;
+
+-- Create a User Id for employees that are made from the first 4 letters of the employee's first name and the
+-- first 2 letters of their last name.  Make the Id lowercase.
