@@ -2,8 +2,8 @@
 Programs for the Basics of SQL
 
 Chinook Database<br>
-The Chinook Database is medium sized database that is often used to showcase queries and simple data modeling.
-It is similiar to the type of databases used by a small business.
+The Chinook Database is medium sized database that is often used to showcase queries and simple data modeling.  
+It is similiar to the type of databases used by a small business.<br>
 chinook.sql:<br>
 <figure>
     <img src='./images/chinook_erm.png'>
