@@ -195,3 +195,6 @@ ORDER BY LastName DESC;
 -- String Manipulation --
 -- Return a list of all customer Ids, full name, address, and a field that combines city and country separated
 -- by a space and all uppercase
+SELECT CustomerId, FirstName || ' ' || LastName AS FullName, address,
+        UPPER(city || ' ' || country) AS CityCountry
+FROM customers;
