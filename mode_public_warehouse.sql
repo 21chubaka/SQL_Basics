@@ -23,3 +23,11 @@ WHERE event_name = 'view_item';
 -- Return the number of items which have been ordered
 SELECT COUNT(DISTINCT(item_id)) AS item_cnt
 FROM dsv1069.orders;
+
+-- Return if a user has ordered anything and when their first purchase was (if they ordered)
+SELECT u.id AS user_id,
+        MIN(o.paid_at) AS min_paid
+FROM dsv1069.users u
+  LEFT OUTER JOIN dsv1069.orders o ON
+    u.id = o.user_id
+GROUP BY u.id;
