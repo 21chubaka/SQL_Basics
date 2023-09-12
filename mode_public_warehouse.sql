@@ -19,3 +19,9 @@ FROM dsv1069.users u
 SELECT COUNT(*) AS num_of_viewed_events
 FROM dsv1069.events
 WHERE event_name = 'view_item';
+
+-- Return the number of items which have been ordered
+SELECT COUNT(DISTINCT(item_id))
+FROM dsv1069.orders o
+  INNER JOIN dsv1069.items i ON
+    o.item_id = i.id;
