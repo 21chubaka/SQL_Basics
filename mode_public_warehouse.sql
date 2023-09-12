@@ -14,3 +14,8 @@ SELECT *
 FROM dsv1069.users u
   JOIN dsv1069.orders o ON
     u.id = o.user_id;
+
+-- Return the count of viewed_item events
+SELECT COUNT(*) AS num_of_viewed_events
+FROM dsv1069.events
+WHERE event_name = 'view_item';
