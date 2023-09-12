@@ -1,5 +1,5 @@
 -- Return user emails where the user account has not been deleted
-SELECT email_address
+SELECT id AS user_id, email_address
 FROM dsv1069.users
 WHERE deleted_at IS NULL;
 
