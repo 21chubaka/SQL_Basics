@@ -16,3 +16,9 @@ SELECT COUNT(*)
 FROM category;
 
 -- Result: 10000
+
+-- Check-in Table:
+SELECT COUNT(*)
+FROM checkin;
+
+-- Result: 10000
