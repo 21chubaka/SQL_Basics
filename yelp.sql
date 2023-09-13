@@ -58,3 +58,9 @@ SELECT COUNT(*)
 FROM tip;
 
 -- Result: 10000
+
+-- User Table:
+SELECT COUNT(*)
+FROM user;
+
+-- Result: 10000
