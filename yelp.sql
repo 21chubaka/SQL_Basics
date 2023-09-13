@@ -10,3 +10,9 @@ SELECT COUNT(*)
 FROM business;
 
 -- Result: 10000
+
+-- Category Table:
+SELECT COUNT(*)
+FROM category;
+
+-- Result: 10000
