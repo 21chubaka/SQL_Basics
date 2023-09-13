@@ -22,3 +22,9 @@ SELECT COUNT(*)
 FROM checkin;
 
 -- Result: 10000
+
+-- Elite Years Table:
+SELECT COUNT(*)
+FROM elite_years;
+
+-- Result: 10000
