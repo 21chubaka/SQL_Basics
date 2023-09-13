@@ -52,3 +52,9 @@ SELECT COUNT(*)
 FROM review;
 
 -- Result: 10000
+
+-- Tip Table:
+SELECT COUNT(*)
+FROM tip;
+
+-- Result: 10000
