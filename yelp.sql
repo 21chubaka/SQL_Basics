@@ -28,3 +28,9 @@ SELECT COUNT(*)
 FROM elite_years;
 
 -- Result: 10000
+
+-- Friend Table:
+SELECT COUNT(*)
+FROM friend;
+
+-- Result: 10000
