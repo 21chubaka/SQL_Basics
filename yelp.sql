@@ -40,3 +40,9 @@ SELECT COUNT(*)
 FROM hours;
 
 -- Result: 10000
+
+-- Photo Table:
+SELECT COUNT(*)
+FROM photo;
+
+-- Result: 10000
