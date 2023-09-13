@@ -46,3 +46,9 @@ SELECT COUNT(*)
 FROM photo;
 
 -- Result: 10000
+
+-- Review Table:
+SELECT COUNT(*)
+FROM review;
+
+-- Result: 10000
