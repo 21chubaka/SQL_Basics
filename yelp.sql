@@ -34,3 +34,9 @@ SELECT COUNT(*)
 FROM friend;
 
 -- Result: 10000
+
+-- Hours Table:
+SELECT COUNT(*)
+FROM hours;
+
+-- Result: 10000
