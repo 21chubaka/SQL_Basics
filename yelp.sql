@@ -101,3 +101,9 @@ SELECT COUNT(DISTINCT(business_id)) AS distinct_records
 FROM checkin;
 
 -- Result: 493
+
+-- Photo Table:
+SELECT COUNT(DISTINCT(id)) AS distinct_records
+FROM photo;
+
+-- Result: 10000
