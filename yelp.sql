@@ -83,3 +83,9 @@ SELECT COUNT(DISTINCT(business_id)) AS distinct_records
 FROM category;
 
 -- Result: 2643
+
+-- Attribute Table:
+SELECT COUNT(DISTINCT(business_id)) AS distinct_records
+FROM attribute;
+
+-- Result: 1115
