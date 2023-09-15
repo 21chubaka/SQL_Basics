@@ -66,8 +66,14 @@ FROM user;
 -- Result: 10000
 
 -- Find the number of distinct records for each table
--- Business Table
+-- Business Table:
 SELECT COUNT(DISTINCT(id)) AS distinct_records
 FROM business;
 
 -- Result: 10000
+
+-- Hours Table:
+SELECT COUNT(DISTINCT(business_id)) AS distinct_records
+FROM hours;
+
+-- Result: 1562
