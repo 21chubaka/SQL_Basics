@@ -64,3 +64,5 @@ SELECT COUNT(*)
 FROM user;
 
 -- Result: 10000
+
+-- Find the number of distinct records for each table
