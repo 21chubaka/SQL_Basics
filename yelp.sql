@@ -125,3 +125,9 @@ SELECT COUNT(DISTINCT(user_id)) AS distinct_records
 FROM friend;
 
 -- Result: 11
+
+-- Elite Year Table:
+SELECT COUNT(DISTINCT(user_id)) AS distinct_records
+FROM elite_years;
+
+-- Result: 2780
