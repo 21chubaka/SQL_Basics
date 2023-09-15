@@ -113,3 +113,9 @@ SELECT COUNT(DISTINCT(user_id)) AS distinct_records
 FROM tip;
 
 -- Result: 537
+
+-- User Table:
+SELECT COUNT(DISTINCT(id)) AS distinct_records
+FROM user;
+
+-- Result: 10000
