@@ -107,3 +107,9 @@ SELECT COUNT(DISTINCT(id)) AS distinct_records
 FROM photo;
 
 -- Result: 10000
+
+-- Tip Table:
+SELECT COUNT(DISTINCT(user_id)) AS distinct_records
+FROM tip;
+
+-- Result: 537
