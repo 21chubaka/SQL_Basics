@@ -95,3 +95,9 @@ SELECT COUNT(DISTINCT(id)) AS distinct_records
 FROM review;
 
 -- Result: 10000
+
+-- Check-in Table:
+SELECT COUNT(DISTINCT(business_id)) AS distinct_records
+FROM checkin;
+
+-- Result: 493
