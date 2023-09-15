@@ -89,3 +89,9 @@ SELECT COUNT(DISTINCT(business_id)) AS distinct_records
 FROM attribute;
 
 -- Result: 1115
+
+-- Review Table:
+SELECT COUNT(DISTINCT(id)) AS distinct_records
+FROM review;
+
+-- Result: 10000
