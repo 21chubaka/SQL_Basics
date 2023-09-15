@@ -77,3 +77,9 @@ SELECT COUNT(DISTINCT(business_id)) AS distinct_records
 FROM hours;
 
 -- Result: 1562
+
+-- Category Table:
+SELECT COUNT(DISTINCT(business_id)) AS distinct_records
+FROM category;
+
+-- Result: 2643
