@@ -119,3 +119,9 @@ SELECT COUNT(DISTINCT(id)) AS distinct_records
 FROM user;
 
 -- Result: 10000
+
+-- Friend Table:
+SELECT COUNT(DISTINCT(user_id)) AS distinct_records
+FROM friend;
+
+-- Result: 11
