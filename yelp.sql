@@ -204,3 +204,9 @@ SELECT stars AS 'star rating', COUNT(stars) AS count
 FROM business
 WHERE city = 'Beachwood'
 GROUP BY stars;
+
+-- Find top 3 users in terms of their total number of reviews
+SELECT id, name, review_count
+FROM user
+ORDER BY review_count DESC
+LIMIT 3;
