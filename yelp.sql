@@ -161,3 +161,9 @@ SELECT MIN(stars) AS star_min,
         MAX(stars) AS star_max,
         AVG(stars) AS star_avg
 FROM review;
+
+-- Find the Min, Max, Avg star rating from the Business Table
+SELECT MIN(stars) AS star_min,
+        MAX(stars) AS star_max,
+        AVG(stars) AS star_avg
+FROM business;
