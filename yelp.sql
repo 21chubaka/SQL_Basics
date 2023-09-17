@@ -179,3 +179,9 @@ SELECT MIN(count) AS count_min,
         MAX(count) AS count_max,
         AVG(count) AS count_avg
 FROM checkin;
+
+-- Find the Min, Max, Avg of the review counts from the User Table
+SELECT MIN(review_count) AS review_count_min,
+        MAX(review_count) AS review_count_max,
+        AVG(review_count) AS review_count_avg
+FROM user;
