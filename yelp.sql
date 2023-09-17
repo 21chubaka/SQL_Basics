@@ -173,3 +173,9 @@ SELECT MIN(likes) AS like_min,
         MAX(likes) AS like_max,
         AVG(likes) AS like_avg
 FROM tip;
+
+-- Find the Min, Max, Avg of counts from the Check-in Table
+SELECT MIN(count) AS count_min,
+        MAX(count) AS count_max,
+        AVG(count) AS count_avg
+FROM checkin;
