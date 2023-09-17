@@ -167,3 +167,9 @@ SELECT MIN(stars) AS star_min,
         MAX(stars) AS star_max,
         AVG(stars) AS star_avg
 FROM business;
+
+-- Find the Min, Max, Avg of likes from the Tip Table
+SELECT MIN(likes) AS like_min,
+        MAX(likes) AS like_max,
+        AVG(likes) AS like_avg
+FROM tip;
