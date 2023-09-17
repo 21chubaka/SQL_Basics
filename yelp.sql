@@ -131,3 +131,27 @@ SELECT COUNT(DISTINCT(user_id)) AS distinct_records
 FROM elite_years;
 
 -- Result: 2780
+
+-- Check if there is any null values in the User Table
+SELECT *
+FROM user
+WHERE id IS NULL OR
+        name IS NULL OR
+        review_count IS NULL OR
+        yelping_since IS NULL OR
+        useful IS NULL OR
+        funny IS NULL OR
+        cool IS NULL OR
+        fans IS NULL OR
+        average_stars IS NULL OR
+        compliment_hot IS NULL OR
+        compliment_more IS NULL OR
+        compliment_profile IS NULL OR
+        compliment_cute IS NULL OR
+        compliment_list IS NULL OR
+        compliment_note IS NULL OR
+        compliment_plain IS NULL OR
+        compliment_cool IS NULL OR
+        compliment_funny IS NULL OR
+        compliment_writer IS NULL OR
+        compliment_photos IS NULL;
