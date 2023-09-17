@@ -198,3 +198,9 @@ SELECT stars AS 'star rating', COUNT(stars) AS count
 FROM business
 WHERE city = 'Avon'
 GROUP BY stars;
+
+-- Find the count of star values for the city 'Beachwood'
+SELECT stars AS 'star rating', COUNT(stars) AS count
+FROM business
+WHERE city = 'Beachwood'
+GROUP BY stars;
