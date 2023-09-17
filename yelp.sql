@@ -185,3 +185,10 @@ SELECT MIN(review_count) AS review_count_min,
         MAX(review_count) AS review_count_max,
         AVG(review_count) AS review_count_avg
 FROM user;
+
+-- Find the number of reviews by city
+SELECT city, 
+        COUNT(review_count) AS city_review_count
+FROM business
+GROUP BY city
+ORDER BY city_review_count DESC;
