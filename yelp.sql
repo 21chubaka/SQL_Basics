@@ -155,3 +155,9 @@ WHERE id IS NULL OR
         compliment_funny IS NULL OR
         compliment_writer IS NULL OR
         compliment_photos IS NULL;
+
+-- Find the Min, Max, Avg star rating from the Review Table
+SELECT MIN(stars) AS star_min,
+        MAX(stars) AS star_max,
+        AVG(stars) AS star_avg
+FROM review;
