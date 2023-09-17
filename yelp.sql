@@ -192,3 +192,9 @@ SELECT city,
 FROM business
 GROUP BY city
 ORDER BY city_review_count DESC;
+
+-- Find the count of star values for the city 'Avon'
+SELECT stars AS 'star rating', COUNT(stars) AS count
+FROM business
+WHERE city = 'Avon'
+GROUP BY stars;
