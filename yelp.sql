@@ -225,3 +225,9 @@ SELECT DISTINCT(SELECT COUNT(*)
         FROM review
         WHERE text LIKE '%hate%') AS hate_count
 FROM review;
+
+-- Find the top 10 users with the most fans
+SELECT id, name, fans
+FROM user
+ORDER BY fans DESC
+LIMIT 10;
