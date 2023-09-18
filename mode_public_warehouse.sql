@@ -50,3 +50,9 @@ GROUP BY (CASE WHEN first_view IS NULL
             THEN false
             ELSE true
             END);
+
+-- Error Codes Worksheet
+-- Exercise 1:
+SELECT id AS user_id, email_address
+FROM dsv1069.users
+WHERE deleted_at IS NULL;
