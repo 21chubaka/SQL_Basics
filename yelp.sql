@@ -294,3 +294,12 @@ FROM business b
 WHERE b.city = 'Phoenix' AND
         c.category = 'Restaurants'
 GROUP BY star_group;
+
+-- Return the number of business, number of reviews, and the average star rating of the
+-- businesses group by if they a open or not
+SELECT COUNT(DISTINCT(id)) AS num_of_businesses,
+        SUM(review_count) AS num_of_reviews,
+        AVG(stars) AS avg_star_rating,
+        is_open
+FROM business b
+GROUP BY is_open;
