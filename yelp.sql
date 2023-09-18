@@ -210,3 +210,9 @@ SELECT id, name, review_count
 FROM user
 ORDER BY review_count DESC
 LIMIT 3;
+
+-- Does posting more reviews correlate with more fans?
+SELECT id, name, review_count, fans
+FROM user
+ORDER BY review_count DESC
+LIMIT 10;
