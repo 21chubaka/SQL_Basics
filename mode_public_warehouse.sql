@@ -56,3 +56,9 @@ GROUP BY (CASE WHEN first_view IS NULL
 SELECT id AS user_id, email_address
 FROM dsv1069.users
 WHERE deleted_at IS NULL;
+
+-- Exercise 2:
+SELECT category, COUNT(*) AS num_of_items
+FROM dsv1069.items
+GROUP BY category
+ORDER BY category;
