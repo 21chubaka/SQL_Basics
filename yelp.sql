@@ -216,3 +216,12 @@ SELECT id, name, review_count, fans
 FROM user
 ORDER BY review_count DESC
 LIMIT 10;
+
+-- Return the count of reviews that include 'love' or 'hate'
+SELECT DISTINCT(SELECT COUNT(*)
+        FROM review
+        WHERE text LIKE '%love%') AS love_count,
+        (SELECT COUNT(*)
+        FROM review
+        WHERE text LIKE '%hate%') AS hate_count
+FROM review;
