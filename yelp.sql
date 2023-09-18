@@ -231,3 +231,28 @@ SELECT id, name, fans
 FROM user
 ORDER BY fans DESC
 LIMIT 10;
+
+-- Pick a city and a category and group them by a 2-3 star and 4-5 star groups
+SELECT b.city, c.category
+FROM business b
+    INNER JOIN category c ON
+        b.id = c.business_id
+WHERE b.city = 'Cleveland' AND
+        c.category = 'Food'
+
+SELECT b.id, b.name, b.postal_code,
+        c.category, h.hours, b.is_open, b.review_count, b.stars,
+        (CASE
+            WHEN (b.stars >= 2) AND (b.stars < 4) THEN
+                '2/3_stars'
+            WHEN (b.stars >= 4) THEN
+                '4/5_stars'
+                END) AS star_group
+FROM business b
+    INNER JOIN category c ON
+        b.id = c.business_id
+    INNER JOIN hours h ON
+        b.id = h.business_id
+WHERE b.city = 'Phoenix' AND
+        c.category = 'Restaurants'
+GROUP BY star_group;
