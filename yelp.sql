@@ -256,3 +256,26 @@ FROM business b
 WHERE b.city = 'Phoenix' AND
         c.category = 'Restaurants'
 GROUP BY star_group;
+
+-- Using the same grouping, return the distribution of hours
+SELECT c.category,
+        --SUBSTR(h.hours, 1, INSTR(h.hours, '|') -1) AS weekday,
+        SUBSTR(SUBSTR(h.hours, INSTR(h.hours, '|') +1), 1) AS wrk_hrs,
+        SUBSTR(SUBSTR(h.hours, INSTR(h.hours, '|') +1), 1, INSTR(SUBSTR(h.hours, INSTR(h.hours, '|')+1),'-')-1) AS open_time,
+        SUBSTR(SUBSTR(h.hours, INSTR(h.hours, '-') +1), INSTR(SUBSTR(h.hours, INSTR(h.hours, '-')+1),'-')+1) AS close_time,
+        COUNT(SUBSTR(SUBSTR(h.hours, INSTR(h.hours, '|') +1), 1, INSTR(SUBSTR(h.hours, INSTR(h.hours, '|')+1),'-')-1)) AS open_time_cnt,
+        COUNT(SUBSTR(SUBSTR(h.hours, INSTR(h.hours, '-') +1), INSTR(SUBSTR(h.hours, INSTR(h.hours, '-')+1),'-')+1)) AS close_time_cnt,
+        (CASE
+            WHEN (b.stars >= 2) AND (b.stars < 4) THEN
+                '2/3_stars'
+            WHEN (b.stars >= 4) THEN
+                '4/5_stars'
+                END) AS star_group
+FROM business b
+    INNER JOIN category c ON
+        b.id = c.business_id
+    INNER JOIN hours h ON
+        b.id = h.business_id
+WHERE b.city = 'Phoenix' AND
+        c.category = 'Restaurants'
+GROUP BY star_group, open_time, close_time;
