@@ -303,3 +303,10 @@ SELECT COUNT(DISTINCT(id)) AS num_of_businesses,
         is_open
 FROM business b
 GROUP BY is_open;
+
+-- Return the average star ratings for each city
+SELECT city, 
+        AVG(stars) AS avg_star_rating
+FROM business
+GROUP BY city
+ORDER BY avg_star_rating DESC;
