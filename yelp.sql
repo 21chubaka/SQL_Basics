@@ -279,3 +279,18 @@ FROM business b
 WHERE b.city = 'Phoenix' AND
         c.category = 'Restaurants'
 GROUP BY star_group, open_time, close_time;
+
+-- Using the same grouping, return the number of reviews for the groups
+SELECT c.category,SUM(b.review_count) AS review_sum,
+        (CASE
+            WHEN (b.stars >= 2) AND (b.stars < 4) THEN
+                '2/3_stars'
+            WHEN (b.stars >= 4) THEN
+                '4/5_stars'
+                END) AS star_group
+FROM business b
+    INNER JOIN category c ON
+        b.id = c.business_id
+WHERE b.city = 'Phoenix' AND
+        c.category = 'Restaurants'
+GROUP BY star_group;
