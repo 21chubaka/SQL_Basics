@@ -79,3 +79,11 @@ SELECT COUNT(DISTINCT(item_id)) AS item_cnt
 FROM dsv1069.orders o
   INNER JOIN dsv1069.items i ON
     o.item_id = i.id;
+
+-- Exercise 6:
+SELECT u.id AS user_id,
+        MIN(o.paid_at) AS min_paid
+FROM dsv1069.users u
+  LEFT OUTER JOIN dsv1069.orders o ON
+    u.id = o.user_id
+GROUP BY u.id;
