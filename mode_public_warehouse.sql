@@ -73,3 +73,9 @@ FROM dsv1069.users u
 SELECT COUNT(DISTINCT(event_id)) AS num_of_viewed_events
 FROM dsv1069.events
 WHERE event_name = 'view_item';
+
+-- Exercise 5:
+SELECT COUNT(DISTINCT(item_id)) AS item_cnt
+FROM dsv1069.orders o
+  INNER JOIN dsv1069.items i ON
+    o.item_id = i.id;
