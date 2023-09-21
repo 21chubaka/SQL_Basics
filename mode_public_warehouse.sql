@@ -87,3 +87,22 @@ FROM dsv1069.users u
   LEFT OUTER JOIN dsv1069.orders o ON
     u.id = o.user_id
 GROUP BY u.id;
+
+-- Exercise 7
+SELECT (CASE WHEN first_view IS NULL 
+          THEN false
+          ELSE true
+          END) AS has_viewed_profile_page,
+        COUNT(user_id) AS users
+FROM 
+  (SELECT u.id AS user_id,
+          MIN(event_time) AS first_view
+    FROM dsv1069.users u
+      LEFT OUTER JOIN dsv1069.events e ON
+        u.id = e.user_id AND
+        event_name = 'view_user_profile'
+    GROUP BY u.id) first_profile_views
+GROUP BY (CASE WHEN first_view IS NULL
+            THEN false
+            ELSE true
+            END);
