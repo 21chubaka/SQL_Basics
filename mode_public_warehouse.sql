@@ -176,3 +176,9 @@ GROUP BY chk_date, platform;
 -- Exercise 3:
 SELECT *
 FROM dsv1069.item_views_by_category_temp;
+
+-- Exercise 4:
+SELECT *
+FROM dsv1069.raw_events
+LIMIT 100;
+-- for web event, user id is NULL
