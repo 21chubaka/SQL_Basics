@@ -156,3 +156,19 @@ SELECT date(event_time) AS chk_date,
         COUNT(*) AS num_of_rows
 FROM dsv1069.events_201701
 GROUP BY chk_date;
+
+-- Exercise 2:
+SELECT *
+FROM dsv1069.events_ex2
+
+SELECT date(event_time) AS chk_date,
+        event_name,
+        COUNT(*) AS num_of_rows
+FROM dsv1069.events_ex2
+GROUP BY chk_date, event_name
+
+SELECT date(event_time) AS chk_date,
+        platform,
+        COUNT(*) AS num_of_rows
+FROM dsv1069.events_ex2
+GROUP BY chk_date, platform;
