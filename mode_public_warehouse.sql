@@ -146,3 +146,13 @@ FROM dsv1069.events
 WHERE event_name = 'view_item'
 GROUP BY event_id, event_time, user_id, platform
 ORDER BY event_id;
+
+-- Identifying Unreliable Data & Nulls Worksheet
+-- Exercise 1:
+SELECT *
+FROM dsv1069.events_201701
+-- Dates missing, specific time
+SELECT date(event_time) AS chk_date,
+        COUNT(*) AS num_of_rows
+FROM dsv1069.events_201701
+GROUP BY chk_date;
