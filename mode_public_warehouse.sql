@@ -182,3 +182,10 @@ SELECT *
 FROM dsv1069.raw_events
 LIMIT 100;
 -- for web event, user id is NULL
+
+-- Exercise 5:
+-- Use COALESCE on user_id
+SELECT *
+FROM dsv1069.orders
+JOIN dsv1069.users ON 
+      orders.user_id = COALESCE(users.parent_user_id, users.id);
