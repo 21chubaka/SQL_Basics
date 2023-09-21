@@ -62,3 +62,9 @@ SELECT category, COUNT(*) AS num_of_items
 FROM dsv1069.items
 GROUP BY category
 ORDER BY category;
+
+-- Exercise 3:
+SELECT *
+FROM dsv1069.users u
+  JOIN dsv1069.orders o ON
+    u.id = o.user_id;
