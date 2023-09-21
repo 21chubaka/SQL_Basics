@@ -172,3 +172,7 @@ SELECT date(event_time) AS chk_date,
         COUNT(*) AS num_of_rows
 FROM dsv1069.events_ex2
 GROUP BY chk_date, platform;
+
+-- Exercise 3:
+SELECT *
+FROM dsv1069.item_views_by_category_temp;
