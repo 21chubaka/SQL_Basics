@@ -68,3 +68,8 @@ SELECT *
 FROM dsv1069.users u
   JOIN dsv1069.orders o ON
     u.id = o.user_id;
+
+-- Exercise 4:
+SELECT COUNT(DISTINCT(event_id)) AS num_of_viewed_events
+FROM dsv1069.events
+WHERE event_name = 'view_item';
