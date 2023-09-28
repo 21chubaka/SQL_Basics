@@ -51,7 +51,7 @@ GROUP BY (CASE WHEN first_view IS NULL
             ELSE true
             END);
 
--- Error Codes Worksheet
+-- 0. Error Codes Worksheet
 -- Exercise 1:
 SELECT id AS user_id, email_address
 FROM dsv1069.users
@@ -107,7 +107,7 @@ GROUP BY (CASE WHEN first_view IS NULL
             ELSE true
             END);
 
--- Flexible Data Formats Worksheet
+-- 1. Flexible Data Formats Worksheet
 -- Exercise 1:
 SELECT event_id, event_time, user_id, platform,
         (CASE WHEN parameter_name = 'item_id' THEN
@@ -147,7 +147,7 @@ WHERE event_name = 'view_item'
 GROUP BY event_id, event_time, user_id, platform
 ORDER BY event_id;
 
--- Identifying Unreliable Data & Nulls Worksheet
+-- 2. Identifying Unreliable Data & Nulls Worksheet
 -- Exercise 1:
 SELECT *
 FROM dsv1069.events_201701
@@ -189,3 +189,8 @@ SELECT *
 FROM dsv1069.orders
 JOIN dsv1069.users ON 
       orders.user_id = COALESCE(users.parent_user_id, users.id);
+
+-- 3. Counting Users Worksheet
+-- Exercise 1:
+SELECT * 
+FROM dsv1069.users
