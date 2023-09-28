@@ -200,3 +200,12 @@ SELECT date(created_at) AS day,
         COUNT(*) AS num_of_users
 FROM dsv1069.users
 GROUP BY day;
+
+-- Exercise 3:
+SELECT date(created_at) AS day,
+        COUNT(*) AS users
+FROM dsv1069.users
+WHERE deleted_at IS NULL 
+  AND
+    (id <> parent_user_id OR parent_user_id IS NULL)
+GROUP BY day;
