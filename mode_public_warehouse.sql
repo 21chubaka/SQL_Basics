@@ -256,3 +256,18 @@ LEFT JOIN (SELECT date(merged_at) AS merg_day,
             AND parent_user_id IS NULL
           GROUP BY merg_day) merged
 ON merged.merg_day = new.day;
+
+-- Exercise 7:
+SELECT * 
+FROM dsv1069.dates_rollup;
+
+SELECT COUNT(*)
+FROM dsv1069.users
+JOIN dsv1069.orders ON 
+      users.parent_user_id = orders.user_id;
+      
+SELECT COUNT(DISTINCT(event_id))
+from dsv1069.events;
+
+SELECT parent_user_id
+FROM dsv1069.users;
