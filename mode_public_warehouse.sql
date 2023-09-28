@@ -236,3 +236,23 @@ LEFT JOIN (SELECT date(merged_at) AS merg_day,
             AND parent_user_id IS NULL
           GROUP BY merg_day) merged
 ON merged.merg_day = new.day;
+
+-- Exercise 6:
+SELECT new.day, new.new_users, del.del_users, merged.merged_users
+FROM (SELECT date(created_at) AS day,
+              COUNT(*) AS new_users
+      FROM dsv1069.users
+      GROUP BY day) new
+LEFT JOIN (SELECT date(deleted_at) AS del_day,
+              COUNT(*) AS del_users
+      FROM dsv1069.users
+      WHERE deleted_at IS NOT NULL
+      GROUP BY del_day) del 
+ON del.del_day = new.day
+LEFT JOIN (SELECT date(merged_at) AS merg_day,
+                  COUNT(*) AS merged_users
+          FROM dsv1069.users
+          WHERE id <> parent_user_id 
+            AND parent_user_id IS NULL
+          GROUP BY merg_day) merged
+ON merged.merg_day = new.day;
