@@ -193,4 +193,10 @@ JOIN dsv1069.users ON
 -- 3. Counting Users Worksheet
 -- Exercise 1:
 SELECT * 
+FROM dsv1069.users;
+
+-- Exercise 2:
+SELECT date(created_at) AS day,
+        COUNT(*) AS num_of_users
 FROM dsv1069.users
+GROUP BY day;
