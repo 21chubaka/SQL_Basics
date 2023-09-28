@@ -209,3 +209,10 @@ WHERE deleted_at IS NULL
   AND
     (id <> parent_user_id OR parent_user_id IS NULL)
 GROUP BY day;
+
+-- Exercise 4:
+SELECT date(deleted_at) AS day,
+        COUNT(*) AS num_of_del_users
+FROM dsv1069.users
+WHERE deleted_at IS NOT NULL
+GROUP BY day;
