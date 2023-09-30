@@ -405,3 +405,17 @@ LEFT OUTER JOIN (
 
 ON users_with_orders_today.user_id = users.id 
 WHERE users.created_at <= '{{ds}}';
+
+-- Exercise 2:
+-- Create Table
+CREATE TABLE IF NOT EXISTS user_info (
+  user_id INT(10) NOT NULL,
+  created_today INT(1) NOT NULL,
+  is_deleted INT(1) NOT NULL,
+  is_deleted_today INT(1) NOT NULL,
+  has_ever_ordered INT(1) NOT NULL,
+  ordered_today INT(1) NOT NULL,
+  ds      DATE    NOT NULL
+  );
+  
+DESCRIBE user_info;
