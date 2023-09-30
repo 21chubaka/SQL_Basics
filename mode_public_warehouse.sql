@@ -288,3 +288,13 @@ CREATE TABLE view_item_events_1 AS
   FROM dsv1069.events 
   WHERE event_name = 'view_item'
   GROUP BY event_id, event_time, user_id, platform;
+
+-- Exercise 2:
+-- Check table
+DESCRIBE view_item_events_1;
+
+SELECT *
+FROM view_item_events_1
+LIMIT 10;
+
+DROP TABLE view_item_events_1;
