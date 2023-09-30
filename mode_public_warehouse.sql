@@ -272,7 +272,7 @@ from dsv1069.events;
 SELECT parent_user_id
 FROM dsv1069.users;
 
--- 4.Clean Query into a Table Worksheet
+-- 4. Clean Query into a Table Worksheet
 -- Exercise 1:
 -- Create table
 CREATE TABLE view_item_events_1 AS 
@@ -368,3 +368,12 @@ REPLACE INTO 'view_item_events_1'
   FROM dsv1069.events 
   WHERE event_name = 'view_item'
   GROUP BY event_id, event_time, user_id, platform;
+
+-- 5. Snapshot Table
+-- Exercise 0:
+-- Liquid Tags
+{% assign ds = '2018-01-01' %}
+SELECT id,
+        '{{ds}}' AS variable_col
+FROM dsv1069.users
+WHERE created_at <= variable_col;
