@@ -488,3 +488,17 @@ LEFT OUTER JOIN (
   ) daily_orders
 ON daily_orders.day = dates_rollup.date
 GROUP BY dates_rollup.date;
+
+-- Exercise 4:
+-- Weekly Rollup
+SELECT *
+FROM dsv1069.dates_rollup
+LEFT OUTER JOIN (
+  SELECT DATE(paid_at) AS day,
+        COUNT(DISTINCT(invoice_id)) AS orders,
+        COUNT(DISTINCT(line_item_id)) AS line_items
+  FROM dsv1069.orders
+  GROUP BY day
+  ) daily_orders
+ON  dates_rollup.date >= daily_orders.day AND
+    dates_rollup.d7_ago < daily_orders.day;
