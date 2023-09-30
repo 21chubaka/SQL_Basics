@@ -459,3 +459,16 @@ SELECT DATE(paid_at) AS day,
         COUNT(DISTINCT(line_item_id)) AS line_items
 FROM dsv1069.orders
 GROUP BY day;
+
+-- Exercise 2:
+-- Check Joins
+SELECT *
+FROM dsv1069.dates_rollup
+LEFT OUTER JOIN (
+  SELECT DATE(paid_at) AS day,
+        COUNT(DISTINCT(invoice_id)) AS orders,
+        COUNT(DISTINCT(line_item_id)) AS line_items
+  FROM dsv1069.orders
+  GROUP BY day
+  ) daily_orders
+ON daily_orders.day = dates_rollup.date;
