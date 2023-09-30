@@ -472,3 +472,19 @@ LEFT OUTER JOIN (
   GROUP BY day
   ) daily_orders
 ON daily_orders.day = dates_rollup.date;
+
+-- Exercise 3:
+-- Cleanup up your columns
+SELECT dates_rollup.date,
+        COALESCE(SUM(orders),0) AS orders,
+        COALESCE(SUM(line_items),0) AS items_ordered
+FROM dsv1069.dates_rollup
+LEFT OUTER JOIN (
+  SELECT DATE(paid_at) AS day,
+        COUNT(DISTINCT(invoice_id)) AS orders,
+        COUNT(DISTINCT(line_item_id)) AS line_items
+  FROM dsv1069.orders
+  GROUP BY day
+  ) daily_orders
+ON daily_orders.day = dates_rollup.date
+GROUP BY dates_rollup.date;
