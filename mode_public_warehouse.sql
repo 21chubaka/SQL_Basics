@@ -450,3 +450,12 @@ LEFT OUTER JOIN (
 
 ON users_with_orders_today.user_id = users.id 
 WHERE users.created_at <= '{{ds}}';
+
+-- 6. Create Roll-up Table Worksheet
+-- Exercise 1:
+-- Create a subtable of orders per day
+SELECT DATE(paid_at) AS day,
+        COUNT(DISTINCT(invoice_id)) AS orders,
+        COUNT(DISTINCT(line_item_id)) AS line_items
+FROM dsv1069.orders
+GROUP BY day;
