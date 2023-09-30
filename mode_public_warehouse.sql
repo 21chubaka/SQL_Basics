@@ -315,3 +315,13 @@ CREATE TABLE view_item_events_1 AS
   FROM dsv1069.events 
   WHERE event_name = 'view_item'
   GROUP BY event_id, event_time, user_id, platform;
+
+-- Exercise 4:
+CREATE TABLE 'view_item_events_1' (
+  event_id  VARCHAR(32) NOT NULL PRIMARY KEY,
+  event_time VARCHAR(26),
+  user_id INT(10),
+  platform  VARCHAR(10),
+  item_id INT(10),
+  referrer  VARCHAR(17)
+  );
