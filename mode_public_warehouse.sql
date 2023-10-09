@@ -519,3 +519,13 @@ LEFT OUTER JOIN (
 ON  dates_rollup.date >= daily_orders.day AND
     dates_rollup.d7_ago < daily_orders.day
 GROUP BY dates_rollup.date;
+
+-- 7. Promo Email Worksheet
+-- Exercise 1:
+/* Create the right subtable for recently viewed events using 
+   the view_item_events table */
+SELECT user_id, item_id, event_time,
+        ROW_NUMBER() OVER (
+          PARTITION BY user_id ORDER BY event_time DESC
+          ) AS view_number
+FROM dsv1069.view_item_events;
