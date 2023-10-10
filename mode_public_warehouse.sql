@@ -682,3 +682,13 @@ SELECT COUNT(DISTINCT(parameter_value)) AS num_of_tests
 FROM dsv1069.events 
 WHERE event_name = 'test_assignment' AND
       parameter_name = 'test_id';
+
+-- Exercise 2:
+-- Check if data is missing
+SELECT parameter_value AS test_id,
+        DATE(event_time) AS day,
+        COUNT(*) AS event_rows
+FROM dsv1069.events 
+WHERE event_name = 'test_assignment' AND
+      parameter_name = 'test_id'
+GROUP BY parameter_value, DATE(event_time);
