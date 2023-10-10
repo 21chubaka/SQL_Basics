@@ -601,3 +601,14 @@ FROM dsv1069.users;
 -- How many Users have ordered
 SELECT COUNT(DISTINCT(user_id)) AS users_w_orders
 FROM dsv1069.orders;
+
+-- Exercise 2:
+-- How many Users have re-ordered the same item
+SELECT COUNT(DISTINCT(user_id)) AS users_w_reorders
+FROM (
+  SELECT user_id, item_id,
+        COUNT(DISTINCT(line_item_id)) AS times_user_ordered
+  FROM dsv1069.orders
+  GROUP BY user_id, item_id
+  ) user_level_orders
+WHERE times_user_ordered > 1;
