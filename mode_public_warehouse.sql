@@ -622,3 +622,10 @@ FROM (
   GROUP BY user_id
   ) user_level
 WHERE order_count > 1;
+
+-- Exercise 4:
+-- Orders per Item
+SELECT item_id,
+        COUNT(line_item_id) AS times_ordered
+FROM dsv1069.orders
+GROUP BY item_id;
