@@ -636,3 +636,15 @@ SELECT item_category,
         COUNT(line_item_id) AS times_ordered
 FROM dsv1069.orders
 GROUP BY item_category;
+
+-- Exercise 6:
+-- Multiple items from the same category
+SELECT item_category,
+        AVG(times_cat_ordered) AS avg_times_cat_ordered
+FROM (
+  SELECT user_id, item_category,
+          COUNT(DISTINCT(line_item_id)) AS times_cat_ordered
+  FROM dsv1069.orders
+  GROUP BY user_id, item_category
+  ) user_level
+GROUP BY item_category;
