@@ -648,3 +648,29 @@ FROM (
   GROUP BY user_id, item_category
   ) user_level
 GROUP BY item_category;
+
+-- Exercise 7:
+-- Average time between orders
+SELECT first_orders.user_id,
+        DATE(first_orders.paid_at) AS first_order_date,
+        DATE(second_orders.paid_at) AS first_order_date,
+        (DATE(second_orders.paid_at) - DATE(first_orders.paid_at)) AS date_diff
+FROM (
+  SELECT user_id, invoice_id, paid_at,
+          DENSE_RANK( ) OVER (
+            PARTITION BY user_id 
+            ORDER BY paid_at ASC
+            ) AS order_num
+  FROM dsv1069.orders
+  ) first_orders
+JOIN (
+  SELECT user_id, invoice_id, paid_at,
+          DENSE_RANK( ) OVER (
+            PARTITION BY user_id 
+            ORDER BY paid_at ASC
+            ) AS order_num
+  FROM dsv1069.orders
+  ) second_orders
+ON first_orders.user_id = second_orders.user_id 
+WHERE first_orders.order_num = 1 AND
+      second_orders.order_num = 2;
