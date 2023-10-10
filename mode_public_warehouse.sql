@@ -629,3 +629,10 @@ SELECT item_id,
         COUNT(line_item_id) AS times_ordered
 FROM dsv1069.orders
 GROUP BY item_id;
+
+-- Exercise 5:
+-- Orders per Category
+SELECT item_category,
+        COUNT(line_item_id) AS times_ordered
+FROM dsv1069.orders
+GROUP BY item_category;
