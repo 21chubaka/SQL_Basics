@@ -596,3 +596,8 @@ AND orders.item_id IS NULL;
 -- User Count
 SELECT COUNT(*)
 FROM dsv1069.users;
+
+-- Exercise 1:
+-- How many Users have ordered
+SELECT COUNT(DISTINCT(user_id)) AS users_w_orders
+FROM dsv1069.orders;
