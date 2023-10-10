@@ -674,3 +674,11 @@ JOIN (
 ON first_orders.user_id = second_orders.user_id 
 WHERE first_orders.order_num = 1 AND
       second_orders.order_num = 2;
+
+-- 9. Test Assignments
+-- Exercise 1:
+-- Counting Tests Running
+SELECT COUNT(DISTINCT(parameter_value)) AS num_of_tests
+FROM dsv1069.events 
+WHERE event_name = 'test_assignment' AND
+      parameter_name = 'test_id';
