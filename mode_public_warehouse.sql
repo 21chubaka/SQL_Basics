@@ -612,3 +612,13 @@ FROM (
   GROUP BY user_id, item_id
   ) user_level_orders
 WHERE times_user_ordered > 1;
+
+-- Exercise 3:
+-- Multiple Orders
+SELECT COUNT(DISTINCT(user_id)) AS users_w_reorders
+FROM (
+  SELECT user_id, COUNT(DISTINCT(invoice_id)) AS order_count
+  FROM dsv1069.orders
+  GROUP BY user_id
+  ) user_level
+WHERE order_count > 1;
