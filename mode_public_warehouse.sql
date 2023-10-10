@@ -590,3 +590,9 @@ LEFT OUTER JOIN dsv1069.orders
 WHERE view_number = 1
 AND users.deleted_at IS NOT NULL
 AND orders.item_id IS NULL;
+
+-- 8. Product Analysis
+-- Exercise 0:
+-- User Count
+SELECT COUNT(*)
+FROM dsv1069.users;
