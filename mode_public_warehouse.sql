@@ -797,6 +797,9 @@ GROUP BY test_events.test_id, test_events.test_assignment, test_events.user_id;
 captured for user_level_testing. Write an answer to the following question: 
 Does this table have everything you need to compute metrics like 30-day view-binary?
 */
+-- Not yet, would need the 'test_start_date' date.
+SELECT * 
+FROM dsv1069.final_assignments_qa;
 
 /*
 2. Write a query and table creation statement to make final_assignments_qa look like 
