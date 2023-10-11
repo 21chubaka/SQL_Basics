@@ -887,6 +887,30 @@ GROUP BY order_binary.test_assignment;
 4. Use the final_assignments table to calculate the view binary, and average views for 
 the 30 day window after the test assignment for item_test_2. (You may include the day the test started)
 */
+SELECT 
+  view_binary.test_assignment,
+  COUNT(DISTINCT(view_binary.item_id))   AS num_of_views,
+  SUM(view_binary.view_binary_30days)  AS sum_view_binary_30days
+FROM(
+  SELECT 
+   fa.item_id,
+   fa.test_assignment,
+   MAX(CASE 
+          WHEN (DATE(vie.event_time) - DATE(fa.test_start_date)) BETWEEN 1 AND 30
+            THEN 1
+            ELSE 0
+            END) AS view_binary_30days
+  FROM 
+    dsv1069.final_assignments AS fa
+  LEFT JOIN dsv1069.view_item_events AS vie ON 
+            fa.item_id = vie.item_id
+  WHERE 
+    fa.test_number = 'item_test_2'
+  GROUP BY
+    fa.item_id,
+    fa.test_assignment
+    ) AS view_binary
+GROUP BY view_binary.test_assignment;
 
 /*
 5. Use the https://thumbtack.github.io/abba/demo/abba.html to compute the lifts in metrics 
