@@ -806,6 +806,53 @@ FROM dsv1069.final_assignments_qa;
 the final_assignments table. If you discovered something missing in part 1, 
 you may fill in the value with a place holder of the appropriate data type. 
 */
+SELECT 
+  item_id,
+  test_a                                   AS test_assignment,
+  'test_a'                                 AS test_number,
+  CAST('2023-10-11 00:00:00' AS TIMESTAMP) AS test_start_date
+FROM 
+  dsv1069.final_assignments_qa
+UNION ALL
+SELECT 
+  item_id,
+  test_b                                   AS test_assignment,
+  'test_b'                                 AS test_number,
+  CAST('2023-10-11 00:00:00' AS TIMESTAMP) AS test_start_date
+FROM 
+  dsv1069.final_assignments_qa
+UNION ALL
+SELECT 
+  item_id,
+  test_c                                   AS test_assignment,
+  'test_c'                                 AS test_number,
+  CAST('2023-10-11 00:00:00' AS TIMESTAMP) AS test_start_date
+FROM 
+  dsv1069.final_assignments_qa
+UNION ALL
+SELECT 
+  item_id,
+  test_d                                   AS test_assignment,
+  'test_d'                                 AS test_number,
+  CAST('2023-10-11 00:00:00' AS TIMESTAMP) AS test_start_date
+FROM 
+  dsv1069.final_assignments_qa
+UNION ALL
+SELECT 
+  item_id,
+  test_e                                   AS test_assignment,
+  'test_e'                                 AS test_number,
+  CAST('2023-10-11 00:00:00' AS TIMESTAMP) AS test_start_date
+FROM 
+  dsv1069.final_assignments_qa
+UNION ALL
+SELECT 
+  item_id,
+  test_f                                   AS test_assignment,
+  'test_f'                                 AS test_number,
+  CAST('2023-10-11 00:00:00' AS TIMESTAMP) AS test_start_date
+FROM 
+  dsv1069.final_assignments_qa;
 
 /*
 3. Use the final_assignments table to calculate the order binary for the 30 day window 
