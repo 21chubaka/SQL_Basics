@@ -858,6 +858,30 @@ FROM
 3. Use the final_assignments table to calculate the order binary for the 30 day window 
 after the test assignment for item_test_2 (You may include the day the test started)
 */
+SELECT 
+  order_binary.test_assignment,
+  COUNT(DISTINCT(order_binary.item_id))   AS num_of_items,
+  SUM(order_binary.orders_binary_30days)  AS sum_orders_binary_30days
+FROM(
+  SELECT 
+   fa.item_id,
+   fa.test_assignment,
+   MAX(CASE 
+          WHEN (DATE(o.created_at) - DATE(fa.test_start_date)) BETWEEN 1 AND 30
+            THEN 1
+            ELSE 0
+            END) AS orders_binary_30days
+  FROM 
+    dsv1069.final_assignments AS fa
+  LEFT JOIN dsv1069.orders AS o ON 
+            fa.item_id = o.item_id
+  WHERE 
+    fa.test_number = 'item_test_2'
+  GROUP BY
+    fa.item_id,
+    fa.test_assignment
+    ) AS order_binary
+GROUP BY order_binary.test_assignment;
 
 /*
 4. Use the final_assignments table to calculate the view binary, and average views for 
