@@ -917,9 +917,14 @@ GROUP BY view_binary.test_assignment;
 and the p-values for the binary metrics ( 30 day order binary and 30 day view binary) 
 using a interval 95% confidence. 
 */
-
 /*
-6. Use Mode’s Report builder feature to write up the test. Your write-up should include a title, 
-a graph for each of the two binary metrics you’ve calculated. The lift and p-value (from the AB test calculator) 
-for each of the two metrics, and a complete sentence to interpret the significance of each of the results.
+30 Day Order Binary:
+  Lifts: -15% - 11% (-2.2%)
+  p-value: 0.74
+30 Day View Binary:
+  Lifts: -2.1% - 5.9% (1.9%)
+  p-value: 0.36
+
+Both the p-values of orders and views are not statistically significant.
+Thus, both show no evidence against the null hypothesis.
 */
